@@ -15,7 +15,7 @@ app.decorate("authenticate", async (request: FastifyRequest, reply: FastifyReply
   try {
     const authHeader = request.headers.authorization;
 
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    if (!authHeader?.startsWith("Bearer ")) {
       return reply.status(401).send({ status: "error", message: "Token no proporcionado" });
     }
 
