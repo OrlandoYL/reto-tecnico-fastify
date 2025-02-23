@@ -4,6 +4,9 @@ import { userSchema } from "../schemas/userSchema";
 
 export default async function userRoutes(app: FastifyInstance) {
   app.post("/users/register", { schema: userSchema }, registerUserController);
-  app.get("/api/users", getUsers);
+  // ✅ Proteger esta ruta con autenticación
+  app.get("/api/users", { preHandler: [app.authenticate] }, async (req, reply) => {
+    return getUsers(req, reply);
+  });
 
 }

@@ -1,8 +1,10 @@
-import 'fastify';
-import { Db } from 'mongodb';
+import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 
-declare module 'fastify' {
+declare module "fastify" {
   interface FastifyInstance {
-    mongo: Db;
+    authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
+  }
+  interface FastifyRequest {
+    user?: any; // 👈 Ajusta el tipo según la estructura del token decodificado
   }
 }

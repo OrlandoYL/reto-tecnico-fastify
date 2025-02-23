@@ -4,8 +4,29 @@ import { ResponseGeneric } from "./domain/entities/dto/ResponseGeneric";
 import expressApp from "./infrastructure/routes/expressRoutes";
 import fastifyExpress from "fastify-express";
 import express from "express";
+import jwt from "jsonwebtoken";
 
 const app = fastify({ logger: true });
+
+// ✅ Middleware de autenticación para proteger endpoints
+app.decorate("authenticate", async (request: FastifyRequest, reply: FastifyReply) => {
+  console.log("Headers:", request.headers);
+  console.log("Intentando verificar token...");
+  try {
+    const authHeader = request.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return reply.status(401).send({ status: "error", message: "Token no proporcionado" });
+    }
+
+    const token = authHeader.split(" ")[1]; // Extraer el token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET ?? "default_secret"); // Verificar el token
+
+    request.user = decoded; // Guardar datos del usuario autenticado
+  } catch (err) {
+    return reply.status(401).send({ status: "error", message: "Token inválido o no proporcionado" });
+  }
+});
 
 (async () => {
   await app.register(fastifyExpress);
