@@ -1,0 +1,53 @@
+# Node.js
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# TypeScript
+*.tsbuildinfo
+dist/
+out/
+.tmp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+debug.log*
+logs/
+*.log
+
+# Editor/IDE
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Env Variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# MongoDB
+dump/
+data/
+*.seed
+
+# Fastify / Express / Nodemon
+.fastify/
+fastify.log
+.nodemon-debug.json
+nodemon-debug.log
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Jest / Testing
+coverage/
+jest.config.js
+test-results/
