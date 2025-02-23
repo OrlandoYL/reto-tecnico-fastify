@@ -1,14 +1,5 @@
-import mongoose from "mongoose";
 import { User } from "../../domain/entities/User";
-
-const UserSchema = new mongoose.Schema<User>({
-  fullName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  phone: { type: String, required: false },
-});
-
-const UserModel = mongoose.model("User", UserSchema);
+import { UserModel } from "../models/UserModel";
 
 export class UserRepository {
   async createUser(user: User): Promise<User> {
