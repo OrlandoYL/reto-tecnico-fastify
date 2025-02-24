@@ -5,8 +5,17 @@ import expressApp from "./infrastructure/routes/expressRoutes";
 import fastifyExpress from "fastify-express";
 import express from "express";
 import jwt from "jsonwebtoken";
+import fastifyCors from "@fastify/cors";
 
 const app = fastify({ logger: true });
+
+// Habilitar CORS 🔥
+app.register(fastifyCors, {
+  origin: "*", // Permite solicitudes desde cualquier origen (modifica esto según tu caso)
+  methods: ["GET", "POST", "PUT", "DELETE"], // Métodos HTTP permitidos
+  allowedHeaders: ["Content-Type", "Authorization"], // Headers permitidos
+  credentials: true, // Permite el envío de cookies o credenciales
+});
 
 // ✅ Middleware de autenticación para proteger endpoints
 app.decorate("authenticate", async (request: FastifyRequest, reply: FastifyReply) => {
