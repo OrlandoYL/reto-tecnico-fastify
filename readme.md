@@ -1,7 +1,11 @@
 # Backend realizado con NodeJS, Fastify, Express y JWT con MongoDB desplegado con Railway
 
-## Instalacion
-Este proyecto esta creado con Fastify y Express
+## 🚀 Instalación y Configuración
+
+### 1️⃣ Requisitos Previos
+- **Node.js** `v18+`
+- **npm** `v9+` o **yarn`
+- **MongoDB** (si se usa base de datos)
 
 ## Generar archivo .env en la raiz del proyecto
 Existe el archivo .env para poder configurar el puerto, url de la base de dato mongo y el secret jwt
@@ -75,10 +79,11 @@ JWT_SECRET=
     ````
 
 #### Login Usuario
+### 🔑 **Autenticación**
 
 |HTTP Method| URL                                  | Description                |
 |---|--------------------------------------|----------------------------|
-|`POST`| http://localhost:3000/api/login          | Login        |
+|`POST`| http://localhost:3000/api/login          | Inicia sesión y retorna un **token JWT**        |
 
 3. `Logueo`
 - URL: http://localhost:3000/api/login
@@ -100,3 +105,10 @@ JWT_SECRET=
         }
     }
     ````
+
+## DEPLOY RAILWAY
+
+## 🛠 Despliegue en Render
+Si deseas desplegar el backend en [Render](https://render.com), usa estos comandos:
+
+
