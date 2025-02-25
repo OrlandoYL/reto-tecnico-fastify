@@ -2,19 +2,30 @@
 
 ## 🚀 Instalación y Configuración
 
+Este es el backend del sistema de gestión de usuarios, desarrollado con **Node.js**, **Express**, y **TypeScript**.  
+Proporciona endpoints para autenticación y administración de usuarios.
+
 ### 1️⃣ Requisitos Previos
 - **Node.js** `v18+`
 - **npm** `v9+` o **yarn`
 - **MongoDB** (si se usa base de datos)
 
+## 🚀 Tecnologías utilizadas
+
+- Node.js
+- Express.js
+- TypeScript
+- JWT para autenticación
+- Railway para despliegue
+
 ## Generar archivo .env en la raiz del proyecto
 Existe el archivo .env para poder configurar el puerto, url de la base de dato mongo y el secret jwt
 
-```
-MONGO_URI=
-PORT=
-JWT_SECRET=
-```
+   ```env
+   PORT=3000
+   JWT_SECRET=tu_secreto
+   DB_URL=mongodb://usuario:contraseña@host:puerto/basedatos
+   ```
 ## API Reference
 
 #### Registrar Usuario  
@@ -106,9 +117,14 @@ JWT_SECRET=
     }
     ````
 
-## DEPLOY RAILWAY
+## 🚀 Despliegue en Railway
 
-## 🛠 Despliegue en Render
-Si deseas desplegar el backend en [Render](https://render.com), usa estos comandos:
+El backend ha sido desplegado en [Railway](https://railway.app/).  
+Sigue estos pasos para desplegar tu propia versión:
+
+1. Crea una cuenta en Railway e inicia sesión.
+2. Crea un nuevo proyecto y selecciona **Deploy from GitHub**.
+3. Conéctalo a tu repositorio y configura las variables de entorno en **Settings → Variables**.
+4. Railway desplegará automáticamente el backend.
 
 
