@@ -7,9 +7,9 @@ Este proyecto esta creado con Fastify y Express
 Existe el archivo .env para poder configurar el puerto, url de la base de dato mongo y el secret jwt
 
 ```
-MONGO_URI={}
-PORT=0000
-JWT_SECRET={}
+MONGO_URI=
+PORT=
+JWT_SECRET=
 ```
 ## API Reference
 
@@ -25,10 +25,10 @@ JWT_SECRET={}
 - Body:
   ````json
     {
-        "fullName": "Josslyn Cruzado",
-        "email": "jcruzado@gmail.com",
-        "password": "$5894665FFGHH$",
-        "phone": "00000025544"
+        "fullName": "",
+        "email": "",
+        "password": "",
+        "phone": "+332123333333"//formato telefono
     }
   ````
 - Response:
@@ -65,11 +65,11 @@ JWT_SECRET={}
         "message": "Listado de usuarios",
         "data": [
             {
-                "id": "67bd266aae52b26bb1229213",
-                "fullName": "Josslyn Cruzado",
-                "email": "jcruzado@gmail.com",
-                "phone": "00000025544"
-            }...
+                "id": "",
+                "fullName": "",
+                "email": "",
+                "phone": ""
+            }
         ]
     }
     ````
